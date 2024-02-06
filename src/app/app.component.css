@@ -1,0 +1,16 @@
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.active{
+    padding: 0 5px;
+    background-color: bisque;
+    color: blue;
+}
+.active-negro{
+    padding: 0 5px;
+    background-color: rgb(10, 50, 34);
+    color: rgb(176, 176, 252);
+}

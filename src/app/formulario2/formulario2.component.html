@@ -1,0 +1,47 @@
+<div class="container mt-2">
+    <h3>{{titulo}}</h3> 
+    <div class="card">
+        <div class="card-body">
+            <form [formGroup]="formUser" (ngSubmit)="procesar()">
+                <div class="mt-2">
+                    <label class="form-label">Nombre</label>
+                    <input class="form-control" formControlName="name" type="text" placeholder="Escriba su nombre">
+                    <!-- <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                        El campo nombre es obligatorio
+                    </div> -->
+                    <!-- <div class="alert alert-danger" [hidden]="formUser.get('name')?.valid || formUser.get('name')?.pristine">
+                        El campo nombre es obligatorio
+                    </div> -->
+                    <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                        El campo nombre es obligatorio
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <label class="form-label">Email</label>
+                    <input class="form-control"  formControlName="email" type="email" placeholder="Escriba su email">
+                    <!-- <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
+                        <span *ngIf="email.errors?.['required']">El email es obligatorio</span>
+                        <span *ngIf="email.errors?.['email']">El email debe tener un formato correcto</span>
+                    </div> -->   
+                    <!-- <div class="alert alert-danger" [hidden]="formUser.get('email')?.valid || formUser.get('email')?.pristine">
+                        <span *ngIf="formUser.get('email')?.errors?.['required']">El email es obligatorio</span>
+                        <span *ngIf="formUser.get('email')?.errors?.['email']">El email debe tener un formato correcto</span>
+                    </div>  -->   
+                    <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
+                        <span *ngIf="email.errors?.['required']">El email es obligatorio</span>
+                        <span *ngIf="email.errors?.['email']">El email debe tener un formato correcto</span>
+                    </div>         
+                </div>
+                <button class="btn btn-primary mt-4" [disabled]="formUser.invalid">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{{formUser.value | json}}
+{{ formUser.get('name')?.value}}
+{{ formUser.get('email')?.value}}
+<!-- {{email.errors | json}}
+<hr>
+{{name.value}}
+<br>
+{{email.value}} -->

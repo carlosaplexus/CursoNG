@@ -1,0 +1,14 @@
+<div class="container mt-2">
+    <h3>{{titulo}}</h3> 
+    <input type="text" class="form-control mt-2" placeholder="Escribe tu nombre" #name>
+    <button class="btn btn-secondary mt-2" (click)="Enviar(name.value)">Enviar</button>
+    <div class="alert alert-info d-flex justify-content-between " *ngIf="enviado; else mensaje;">
+        Enviado
+        <button class="btn btn-danger" (click)="enviado=false">X</button>
+    </div>
+</div>
+<ng-template #mensaje>
+    <div class="alert alert-danger">
+        Envío de prueba
+    </div>
+</ng-template>

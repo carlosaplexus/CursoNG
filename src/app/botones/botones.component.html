@@ -1,0 +1,10 @@
+<div class="container mt-2">
+   <h3>{{titulo}}</h3> 
+   <button class="btn btn-danger" [disabled]="btn_desactiva" (click)="texto_color='text-danger'">Rojo</button>
+   <button class="btn btn-success mx-2" [disabled]="btn_desactiva" (click)="texto_color='text-success'">Verde</button>
+   <button class="btn btn-primary" [disabled]="btn_desactiva" (click)="texto_color='text-primary'">Azul</button>
+   <p [ngClass]="texto_color">Pulse un botón para cambiarme de color</p>
+   <button class="btn btn-secondary" (click)="btn_desactiva=!btn_desactiva">Activar/Desactivar</button>
+   <hr>
+</div>
+
